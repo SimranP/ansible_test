@@ -1,0 +1,16 @@
+---
+- name: Add gocd yum repository
+  become: yes
+  yum_repository:
+    name: gocd
+    description: gocd repo
+    baseurl: https://download.gocd.io
+    gpgcheck: yes
+    gpgkey: https://download.gocd.io/GOCD-GPG-KEY.asc
+    enabled: yes
+
+- name: Install go server {{go_server_version}}
+  become: yes
+  yum:
+    name: go-server-{{go_server_version}}
+  notify: Start go server

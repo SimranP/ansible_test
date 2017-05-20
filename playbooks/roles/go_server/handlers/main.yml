@@ -1,0 +1,5 @@
+- name: Start go server
+  become: yes
+  service:
+    name: go-server
+    state: started

@@ -1,4 +1,4 @@
 ---
 - hosts: webservers1
   roles:
-    - oracle_jdk
+    - go_server
