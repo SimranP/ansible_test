@@ -16,14 +16,14 @@
 
 - name: Register agent with go-server
   become: yes
-  template:
-    src: go_agent
-    dest: /etc/default/go-agent
-  register: go_agent_config_update
+  lineinfile:
+    path: /etc/default/go-agent
+    regexp: '^GO_SERVER_URL='
+    line: 'GO_SERVER_URL=https://{{go_server_location}}:8154/go'
+  notify: Restart go agent
 
-- name: Restart go agent
+- name: Enable agent on go server
   become: yes
-  service:
-    name: go-agent
-    state: restarted
-  when: go_agent_config_update.changed
+  copy:
+    src: autoregister.properties
+    dest: /var/lib/go-agent/config/autoregister.properties
