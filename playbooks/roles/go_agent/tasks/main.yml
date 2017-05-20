@@ -27,3 +27,4 @@
   copy:
     src: autoregister.properties
     dest: /var/lib/go-agent/config/autoregister.properties
+  notify: Restart go agent

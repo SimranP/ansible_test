@@ -1,8 +1,8 @@
 ---
-- hosts: webservers1
+- hosts: go_server
   roles:
     - go_server
 
-- hosts: webservers2
+- hosts: go_agent
   roles:
     - go_agent

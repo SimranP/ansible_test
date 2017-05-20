@@ -1,5 +1,5 @@
-[webservers1]
+[go_server]
 192.168.33.10 ansible_ssh_user=vagrant ansible_ssh_private_key_file=../.vagrant/machines/box1/virtualbox/private_key
 
-[webservers2]
+[go_agent]
 192.168.33.11 ansible_ssh_user=vagrant ansible_ssh_private_key_file=../.vagrant/machines/box2/virtualbox/private_key
