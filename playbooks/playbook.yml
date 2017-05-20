@@ -2,3 +2,7 @@
 - hosts: webservers1
   roles:
     - go_server
+
+- hosts: webservers2
+  roles:
+    - go_agent
